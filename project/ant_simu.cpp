@@ -17,7 +17,6 @@ void advance_time( const labyrinthe& land, pheronome& phen,
                    const position_t& pos_nest, const position_t& pos_food,
                    std::vector<ant>& ants, std::size_t& cpteur )
 {
-#   pragma omp parallel for
     for ( size_t i = 0; i < ants.size(); ++i )
         ants[i].advance(phen, land, pos_food, pos_nest, cpteur);
     phen.do_evaporation();
